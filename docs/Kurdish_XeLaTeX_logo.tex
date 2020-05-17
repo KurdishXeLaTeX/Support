@@ -1,0 +1,45 @@
+\documentclass[margin=0.35cm,varwidth,usenames,dvipsnames]{standalone}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.text,shapes.geometric}
+\usepackage{xcolor}
+\definecolor{navcolor}{HTML}{f5f6fa}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguages{arabic}
+
+\newfontfamily\kurdishfont[Script=Arabic,Scale=1]{Yas}
+\makeatletter
+
+\begin{document}
+\pagecolor{navcolor}
+
+\begin{tikzpicture}
+ \pgfmathsetmacro{\radius}{1}
+  \pgfmathsetmacro{\radiussecond}{0.7}
+%  \fill[olive!30] (1,0) rectangle (-1,-1);
+ \fill[Turquoise!90] (1.5,0)  arc [radius=1.5, start angle=0, end angle=180];
+ \fill[ForestGreen!90] (-1.5,0)  arc [radius=1.5, start angle=180, end angle=360];
+%\fill[blue!80!black] (-4,0) rectangle (4,-4);
+
+ \path[decoration={text along path,text color=white,
+                raise = 0ex,
+                text = {|\Large\bfseries|Kurdî},
+                text align = center,
+            },
+            decorate
+        ] (185:\radius) arc(180:0:\radius);
+ \path[decoration={text along path,text color=gray!0,
+                raise = -0.8ex,
+                text  along path,
+                text = {|\Large\bfseries|{\kurdishfont{کوردی}}},
+                text align = center,
+            },
+            decorate
+        ] (175:\radiussecond) arc(180:360:\radiussecond);
+
+ \node[inner sep=0.1cm,fill=gray!40, text=black] at (0, 0) {\huge\bfseries \XeLaTeX};
+\end{tikzpicture}
+
+\end{document}
