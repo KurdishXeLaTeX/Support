@@ -1,0 +1,175 @@
+\documentclass{article}
+%\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks,breaklinks,
+            urlcolor=[rgb]{0,0.5,0.5},
+            linkcolor=[rgb]{0,0.5,0.5}}
+
+\usepackage{xcolor}            
+\usepackage{listings}
+\lstset{%
+language={[LaTeX]TeX},
+numbersep=5mm,
+basicstyle=\footnotesize,
+numbers=left,
+stepnumber=1,
+numberstyle=\tiny,
+breaklines=true,frame=single,framexleftmargin=2mm, xleftmargin=2mm,
+prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+backgroundcolor=\color{green!5},frameround=fttt,escapeinside=??,
+rulecolor=\color{red},
+morekeywords={
+    maketitle},
+keywordstyle=\color[rgb]{0,0,1},                    
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941}
+%columns=fullflexible
+}
+
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{graphics}
+
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguages{arabic}
+
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
+\makeatletter
+\newfontfamily\kurdishfont[Script=Arabic,Scale=1,Ligatures=Contextual]{Scheherazade}
+\makeatletter
+
+\title{Typesetting with \XeLaTeX ~for Kurdish}
+\author{Sina Ahmadi \\ \texttt{ahmadi.sina@outlook.com}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    This document provides technical information to use the \XeLaTeX ~typesetting for the Kurdish language using the \texttt{Polyglossia} package. The current configuration of the Kurdish language supports the Sorani and Kurmanji dialects, both of them in two scripts, Latin and Persian-Arabic. Our main objective is to promote the usage of the \XeLaTeX~ typesetting and create educational content to this end. The Kurdish \XeLaTeX~ project is available at \url{https://kurdishxelatex.github.io/}. 
+\end{abstract}
+
+
+\section{Introduction}
+
+Kurdish is an Indo-European language widely spoken among the Kurdish population in the Middle East and the Kurdish diaspora around the world. The Kurdish language is considered as a dialect continuum with mainly three dialects, Sorani, Kurmanji and Southern Kurdish, and also has mutual intelligibility with the Zaza–Gorani languages. Among the Kurdish dialects, Sorani and Kurmanji are widely used in education and media. In addition to the dialect diversity, Kurdish uses various scripts and follows different writing norms, such as the use of numerals and punctuation marks, due to its unique administrative situation. Currently, two scripts are widely used for writing Kurdish: Latin and Persian-Arabic, which are both based on phonemic orthographies. Although these two scripts are widely used for writing all the dialects of Kurdish, among the Kurmanji and Sorani speakers, the Latin and the Persian-Arabic scripts are respectively more popular.
+
+\section{Kurdish in \texttt{Polyglossia}}
+
+\texttt{Polyglossia}\footnote{\url{https://github.com/reutenauer/polyglossia}} is a modern multilingual typesetting in \XeLaTeX~and Lua\LaTeX~which is currently supporting over 70 languages\footnote{As of May 2020}. Given the diversity in scripts and dialects of Kurdish, \texttt{Polyglossia} is an ideal package to support the Kurdish language.
+
+The following shows a basic document structure in \XeLaTeX with \texttt{Polyglossia}:
+
+\begin{lstlisting}
+    \documentclass{article}
+    \usepackage{polyglossia}
+    \setmainfont{Times New Roman}
+    \setdefaultlanguage[variant=sorani,script=latin,numerals=western]{kurdish}
+    \title{Nûsrawekeyekî Min}
+    \author{Nawî min}
+    \date{\ontoday}
+    \begin{document}
+    \maketitle
+    \end{document}
+\end{lstlisting}
+
+
+The configuration of Kurdish in \texttt{Polyglossia} includes Sorani and Kurmanji in both scripts with the following options:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l|l|l} 
+ \hline
+Polyglossia name         & variant  & script        & numerals         \\ \hline \hline
+\multirow{2}{*}{Kurdish} & \texttt{sorani}   & \texttt{arabic}, \texttt{latin} & \texttt{eastern}, \texttt{western} \\  \cline{2-4} 
+                         & \texttt{kurmanji} & \texttt{arabic}, \texttt{latin} & \texttt{eastern}, \texttt{western} \\ \hline
+\end{tabular}
+\caption{Options to use Kurdish in \texttt{Polyglossia}}
+\label{tab_polyglot_options}
+\end{table}
+
+ \begin{itemize}[noitemsep]
+ 	\item \textbf{variant}: \texttt{kurmanji} or \texttt{sorani} (\textit{default})
+ 	\item \textbf{script}: \texttt{arabic} or \texttt{latin}
+ 	\item \textbf{numerals}: \texttt{western} or \texttt{eastern}
+	\item \textbf{locale}: currently set by default
+	\item \textbf{calendar}: currently set by default to the Gregorian calendar of Kurdish
+ \end{itemize}
+
+The scripts for Sorani and Kurmanji are by default \texttt{arabic} and \texttt{latin}. In addition to the default \texttt{\textbackslash today}, \texttt{\textbackslash ontoday} can be used to take the Izafa structure of Kurdish into account. For instance, the first command produces \textit{15 Gulan 2020} (May 15, 2020) while the latter takes the morphological change into account by producing \textit{15ê Gulanê 2020} (literally meaning, 15 of May of 2020). This option is available for both dialects.
+
+Table \ref{tab_polyglot_calendar} and \ref{tab_polyglot_glosses} provide the translation of the months and keywords in the current configuration of Kurdish in \texttt{Polyglossia}.
+
+\begin{table}[h]
+\centering
+%\resizebox{\columnwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+English & Sorani-Arabic & Sorani-Latin & Kurmanji-Arabic & Kurmanji-Latin \\\hline\hline
+January & {\kurdishfont{ دووهەم کانوونی}} & Kanûnî Yekem & {\kurdishfont{پاشین  چلەیا}} & Çileya Paşîn \\ 
+February & {\kurdishfont{شوبات}} & Şubat & {\kurdishfont{شبات }} & Sibat \\
+March & {\kurdishfont{ ئازار }} & Azar & {\kurdishfont{ ئادار }} & Adar \\
+April & {\kurdishfont{نیسان }} & Nîsan & {\kurdishfont{ نیسان }} & Nîsan \\
+May & {\kurdishfont{ئایار }} & Ayar & {\kurdishfont{ گولان }} & Gulan \\
+June & {\kurdishfont{حوزەیران }} & Huzeyran & {\kurdishfont{ حەزیران }} & Hezîran \\
+July & {\kurdishfont{ تەممووز }} & Temmûz & {\kurdishfont{ تیرمەهـ }} & Tîrmeh \\
+August & {\kurdishfont{ ئاب }} & Ab & {\kurdishfont{ تەباخ }} & Tebax \\
+September & {\kurdishfont{ئەیلوول }} & Eylûl & {\kurdishfont{ ئیلۆن }} & Îlon \\
+October & {\kurdishfont{  یەكەم تشرینی}} & Tişrînî Yekem & {\kurdishfont{  پێشین چریا  }} & Çiriya Pêşîn \\
+November & {\kurdishfont{  دووهەم تشرینی}} & Tişrînî Dûhem & {\kurdishfont{ پاشین چریا }} & Çiriya Paşîn \\
+December & {\kurdishfont{  یەكەم كانوونی}} & Kanûnî Dûhem & {\kurdishfont{پێشین چلەیا  }} & Çileya Pêşîn \\ \hline
+\end{tabular}
+%}
+\caption{Name of the months in the Kurdish calendars in \texttt{Polyglossia}}
+\label{tab_polyglot_calendar}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+%\resizebox{\columnwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+English & Sorani-Arabic & Sorani-Latin & Kurmanji-Arabic & Kurmanji-Latin \\\hline\hline
+preface & {\kurdishfont{پێشەكی}} & Pêşekî & {\kurdishfont{پێشگۆتن}} & Peşgotin  \\
+references & {\kurdishfont{سەرچاوەکان}} & Serçawekan & {\kurdishfont{ ژێدەر}} & Jêder   \\
+abstract & {\kurdishfont{پوختە}} & Puxte & {\kurdishfont{کورتەبیر}} & Kurtebîr  \\
+bibliography & {\kurdishfont{کتێبنامە}} & Kitêbname & {\kurdishfont{پرتووکان چاڤکانییا}} & Çavkanîya Pirtukan  \\
+chapter & {\kurdishfont{بەندی}} & Bendî & {\kurdishfont{سەرێ}} & Serê  \\
+appendix & {\kurdishfont{پاشکۆ}} & Paşko & {\kurdishfont{پاشکۆ}} & Tebînîya  \\
+contents & {\kurdishfont{نێوەڕۆک}} & Nêweřok & {\kurdishfont{ناڤێرۆک}} & Navêrok  \\
+list of figures & {\kurdishfont{ وێنەکان لیستی}} & Lîstî Wênekan & {\kurdishfont{دیمەنا هەژمارا}} & Hejmara Dimena  \\
+list of tables & {\kurdishfont{ خشتەکان لیستی }} & Lîstî Xiştekan & {\kurdishfont{کەڤالێن هەژمارا}} & Hejmara Kevalen  \\
+index & {\kurdishfont{پێنوێن}} & Pêřist & {\kurdishfont{پێرست}} & Endeks  \\
+figure & {\kurdishfont{وێنەی}} & Wêney & {\kurdishfont{دیمەنێ}} & Dimenê  \\
+table & {\kurdishfont{خشتەی}} & Xiştey & {\kurdishfont{کەڤالا}} & Kevala  \\
+part & {\kurdishfont{بەشی}} & Beşî & {\kurdishfont{بەشا}} & Bêşa  \\
+enclosure & {\kurdishfont{هاوپێچ}} & Hawpêç & {\kurdishfont{دوماهک}} & Dumahik  \\
+correspondance & {\kurdishfont{ڕوونووس}} & Řûnûs & {\kurdishfont{بەلاڤکەر}} & Belavker  \\
+head to & {\kurdishfont{بۆ}} & Bo & {\kurdishfont{ بۆ ژ}} & Ji bo  \\
+page & {\kurdishfont{لاپەڕە}} & Lapeře & {\kurdishfont{رووپەلێ}} & Rûpelê  \\
+see & {\kurdishfont{ لێکەن چاو }} & Çaw lêken & {\kurdishfont{بنێرا}} & binêra  \\
+also see & {\kurdishfont{ لێکەن چاو هەروەها}} & Herweha çaw lêken & {\kurdishfont{بنێرا ژ ڤێیا لە }} & li vêya jî binêra  \\
+proof & {\kurdishfont{سەلماندن}} & Selmandin & {\kurdishfont{دەلیل}} & Delîl  \\
+glossary & {\kurdishfont{فەرهەنگۆک}} & Ferhengok & {\kurdishfont{لێکۆلینێ چاڤکانییا}} & Çavkanîya lêkolînê  \\ \hline
+\end{tabular}
+%}
+\caption{Translation of the glosses in Kurdish in \texttt{Polyglossia}}
+\label{tab_polyglot_glosses}
+\end{table}
+
+
+\section{Conclusion}
+
+This document is aiming at providing regular update on the progress of the Kurdish \TeX~community and the Kurdish configuration in \texttt{Polyglossia}. For further information regarding \texttt{Polyglossia}, please consult \cite{Charette2020} or visit the Kurdish \XeLaTeX~Users Group at \url{https://kurdishxelatex.github.io/}.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
+
