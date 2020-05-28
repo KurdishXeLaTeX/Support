@@ -1,2 +1,2 @@
 # Support
-Confiurations, files and fonts for the Kurdish language
+Configurations, files and fonts for the Kurdish language
