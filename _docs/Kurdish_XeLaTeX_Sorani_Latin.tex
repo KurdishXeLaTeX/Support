@@ -1,6 +1,6 @@
 \documentclass[14pt]{article}
-\usepackage{graphicx}
 
+\usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{verse}
 \newcommand{\attrib}[1]{%
@@ -21,7 +21,7 @@
  ,newparameters   % use default settings of ragged2e
 ]{ragged2e}
 \usepackage[pdfauthor={Sina Ahmadi},
-            pdftitle={Using XeLaTeX for Kurdish}]{hyperref}
+            pdftitle={XeLaTeX bo Nûsînî Kurdî}]{hyperref}
             
 \hypersetup{colorlinks,breaklinks,
             urlcolor=[rgb]{0,0.5,0.5},
@@ -51,18 +51,18 @@ keywordstyle=\color[rgb]{0,0,1},
 
 \usepackage{polyglossia}
 \setdefaultlanguage[variant=Sorani,script=Latin,numerals=western]{kurdish} 
-\setmainfont{Times New Roman}
+
 \newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
 \newfontfamily\greekfont{Times New Roman}[Script=Greek]
 \let\arabicfonttt\ttfamily
 \setotherlanguage{english}
 \setotherlanguage[variant=poly]{greek}
-\newfontfamily\kurdishfont[Script=Arabic,Scale=1,Ligatures=Contextual]{Yas}
+%\newfontfamily\kurdishfont[Script=Arabic,Scale=1,Ligatures=Contextual]{Yas}
 
 
-\title{\textenglish{\XeLaTeX} bo Nûsînî Kurdî}
+\title{\XeLaTeX~bo Nûsînî Kurdî}
 \author{Sîna Ehmedî \\ {\small \url{https://sinaahmadi.github.io/}}}
-\date{\today}
+\date{\ontoday}
 
 \begin{document}
 
@@ -71,16 +71,17 @@ keywordstyle=\color[rgb]{0,0,1},
 
 \begin{abstract}
 
-Maweyek bû xulyay ewem hebû ke bitwanim \TeX bo nûsînî kurdî be kar bênim. Her ewe hanî dam ke xom Kurdî lê zyad bikem. Lem bełgeyeda bas le bekar hênanî \XeLaTeX legeł pekeycî \texttt{Polyglossia} bo nûsînî kurdî dekem. Le dwayîn weşanî kurdî lem pekeyceda, dû zarawey Soranî û Kirmancî be her dû řênûsî Latîn û Ërebî dabîn kirawin. Diłnyam eger be başî fêrî \TeX bin, dezanin çêjêk ke le be kar hênanî \TeX da heye le çi bernamey dîkeda nîye!
+Maweyek bû xulyay ewem hebû ke bitwanim \TeX~bo nûsînî kurdî be kar bênim. Her ewe hanî dam ke xom Kurdî lê zyad bikem. Lem bełgeyeda bas le bekar hênanî \XeLaTeX~legeł pekeycî \texttt{Polyglossia} bo nûsînî kurdî dekem. Le dwayîn weşanî kurdî lem pekeyceda, dû zarawey Soranî û Kirmancî be her dû řênûsî Latîn û Ërebî dabîn kirawin. Diłnyam eger be başî fêrî \TeX~bin, dezanin çêjêk ke le be kar hênanî \TeX~da heye le çi bernamey dîkeda nîye!
 
+Bo agadarîy ziyatir serdanî \url{https://kurdishxelatex.github.io/} biken.
 \end{abstract}
 
 
 \section{\TeX~çî ye?}
 
-\TeX sîstemêkî amade kirdnî bełge ye ke têyda nûser le deqî sakar legeł nîşanegelî taybetî bo nûsîn kełk werdegirê. Em boçûne cyawaz e le şêwazî dîkey dest werdanî deq ke têyda her şitêk bête çaw her ew şite ye ke çap debê û wekû akamî bełgeke nîşan dedirê. Boyeş be îngilîsî bem şêwaze dełên \textit{what you see is what you get}, yan be kurtî \textsc{WYSIWYG}. Microsoft Word nimûneyekî nasraw e ke lem şêwaze kełk werdegirê.
+\TeX~sîstemêkî amade kirdinî bełge ye ke têyda nûser le deqî sakar legeł nîşanegelî taybetî bo nûsîn kełk werdegirê. Em boçûne ciyawaz e le şêwazî dîkey dest werdanî deq ke têyda her şitêk bête çaw her ew şite ye ke çap debê û wekû akamî bełgeke nîşan dedirê. Boyeş be îngilîsî bem şêwaze dełên \textit{what you see is what you get}\footnote{Be Kurdî, \textit{ew şite ke debînin, her ew şite ye ke werî degirin}}, yan be kurtî \textsc{WYSIWYG}. \textsc{Microsoft Word} nimûneyekî nasraw e ke lem şêwaze kełk werdegirê.
 
-\TeX bo yekem car le sałî 1978 le layenî zana û bilîmetî kompyûter Donald Knuth ewe saz kira. \TeX le ser ew boçûneda pêkhatûwe ke nûser debê karî nûsîn bika nek řazandnewey deq. Wate, bo nûserî bełgeyek debê ew amêrane dabîn kirabê ke bitwanê be hemû pêdawîstîyekanî le nûsînda biga, bigre bo nûsînî firmûłêkî bîrkarî bê yan hawkêşeyekî kîmyayî yan parçe şîërêk. Boyeş, le nêw akadîmya û ew kesane ke be lêhatûyî le ser babetêkî zansitî denûsin le \TeX zor be berbiławî kełk werdegîrdirê. Wişey \TeX le wişey Yonanî \textgreek{\textit{τέχνη}}yewe dê ke be manay huner e. Le ber ewey fonîmî \textgreek{χ} le Kurdî û zor zimanda beranberêkî nîye, detwanîn le kurdî błeyn \textit{têk} yan \textit{têx}.
+\TeX~bo yekem car le sałî 1978 le layenî zana û bilîmetî kompyûter Donald Knuth ewe saz kira. \TeX~le ser ew boçûneda pêk hatûwe ke nûser debê karî nûsîn bika nek řazandinewey deq. Wate, bo nûserî bełgeyek debê ew amêrane dabîn kirabê ke bitwanê be hemû pêdawîstîyekanî le nûsînda biga, bigre bo nûsînî firmûłêkî bîrkarî bê yan hawkêşeyekî kîmyayî yan parçe şîërêk. Boyeş, le nêw akadîmya û ew kesane ke be lêhatûyî le ser babetêkî zansitî denûsin le \TeX~zor be berbiławî kełk werdegîrdirê. Wişey \TeX~le wişey Yonanî \textgreek{\textit{τέχνη}} yewe dê ke be manay huner e. Le ber ewey fonîmî \textgreek{χ} le Kurdî û zor zimanda beranberêkî nîye, detwanîn be Kurdî biłeyn \textit{têk} yan \textit{têx} bełam ne "têks"!
 
 \paragraph{Taybetmendîyekanî \TeX}
 Be kurtî, le taybetîmendîye here girîngekanî têk emane in:
@@ -94,12 +95,12 @@ Be kurtî, le taybetîmendîye here girîngekanî têk emane in:
 \item gořanewe be şêwekanî dîkey nîşan danî deq wekû HTML
 \end{itemize}
 
-Her le ser binemay \TeX ewe, diwatir çendîn berhemî dîke dabîn kiran ke têyanda taybetmendîgelî zortir ře çaw degîrdirê, wekû nûsîn be zimananî dîke û be řênûsî cyawaz le řênûsî Latîn. \LaTeX~ û \XeLaTeX~ dû nimûney benêwbang in ke be taybet lem serdemeda kełkyan lê werdegîrdirê.
+Her le ser binemay \TeX~ewe, diwatir çendîn berhemî dîke dabîn kiran ke têyanda taybetmendîgelî zortir ře çaw degîrdirê, wekû nûsîn be zimananî dîke û be řênûsî cyawaz le řênûsî Latîn. \LaTeX~û \XeLaTeX~dû nimûney benêwbang in ke be taybet lem serdemeda kełkyan lê werdegîrdirê.
 
 
 \section{Çon \TeX~be kar bênim?}
 
-Bo kełk wergirtin le \TeX le ser kompyûtereket le pêş hemû şitêk debê bernameket damezrandibê. Bełgeyekî sakar le \TeX da le wêney \ref{fig_mwe} nîşan dirawe.
+Bo kełk wergirtin le \TeX~le ser kompyûtereket le pêş hemû şitêk debê bernameket damezrandibê. Bełgeyekî sakar le \TeX~da le wêney \ref{fig_mwe} nîşan dirawe.
 
 \begin{figure}[h]
     \centering
@@ -133,26 +134,26 @@ The joy of writing Kurdish in \TeX.
         \includegraphics[width=\textwidth]{figure_example.pdf} 
         }
     \end{minipage}
- \caption{Nimûneyek le bełgeyek ke be \LaTeX~ nûsrawe. Le lay çepewe, kodî bełgekeye û le lay řastîşewe akamî kampayl kirdinyetî}
+ \caption{Nimûneyek le bełgeyek ke be \LaTeX~nûsrawe. Le lay çepewe, kodî bełgekeye û le lay řastîşewe akamî kampayl kirdinyetî}
  \label{fig_mwe}
 \end{figure}
 
 
-Êste pirsyar ewe ye aya her em şêweyeş detwanîn bo nûsînî kurdî be kar bênîn? Serinc den ke lew nimûneyeda le wêney \ref{fig_mwe} ke le serê dîtman, ne mêjû, ne jimarey beşekan û ne tenanet ewey ke babeteke le kwêy bełgekeda bê û qebarey lapeřeke çon bê be ême cêbecê nekirawe. Wate, \TeX~ bo xoy bełgekeman be hemû ew wirdekarîyanewe saz deka. Ca bo ye, ew kesaney ke çêjî kar kirdin be têk deçêjin, qet natwanin bgeřênewe ser sîstimanî pêkhênanî deq (typesetting) î dîke wekû Microsoft Office! Bo ewey zortir legeł pêkhatekanî bełgekan le \TeX~ aşina bin çaw le \cite{wilkins1995getting} biken.
+Êste pirsyar ewe ye aya her em şêweyeş detwanîn bo nûsînî kurdî be kar bênîn? Serinc den ke lew nimûneyeda le wêney \ref{fig_mwe} ke le serê dîtman, ne mêjû, ne jimarey beşekan û ne tenanet ewey ke babeteke le kwêy bełgekeda bê û qebarey lapeřeke çon bê be ême cêbecê nekirawe. Wate, \TeX~bo xoy bełgekeman be hemû ew wirdekarîyanewe saz deka. Ca bo ye, ew kesaney ke çêjî kar kirdin be têk deçêjin, qet natwanin bgeřênewe ser sîstimanî pêkhênanî deq (typesetting) î dîke wekû Microsoft Office! Bo ewey zortir legeł pêkhatekanî bełgekan le \TeX~aşina bin çaw le \cite{wilkins1995getting} biken.
 
 
 
 \section{\XeLaTeX~bo nûsînî Kurdî}
 
-Kêşeyek ke pêştir le be kar hênanî \TeX~ da hebû, be kar hênanî zimanan û řênûsanî dîke bû. \XeLaTeX sîstimêke ke le ser \TeX~ ewe saz kirawe û biřyar wa ye ke le Unicode bo nûsînî hemû zimanêk kełk wergirê. Bo ye be xoşhałîyewe detwanîn le cwanîy sîstimî pêkhênanî deqî \TeX bo nûsînî Kurdî kełk wergirîn.
+Kêşeyek ke pêştir le be kar hênanî \TeX~da hebû, be kar hênanî zimanan û řênûsanî dîke bû. \XeLaTeX~sîstimêk e ke le ser \TeX~ewe saz kirawe û biřyar wa ye ke le Unicode bo nûsînî hemû zimanêk kełk wergirê. Bo ye be xoşhałîyewe detwanîn le cwanîy sîstimî pêkhênanî deqî \TeX~bo nûsînî Kurdî kełk wergirîn.
 
-\texttt{Polyglossia}\footnote{\url{https://github.com/reutenauer/polyglossia}}  pekeycêk e ke bo be kar hênanî zimane corawcorekan le \XeLaTeX~ saz kirawe. Zimanî Kurdî çendîn zarawe û řênûsî heye. Lem doxeda, dû zaraweman lew pekeyce bo Kurdî zyad kirdûwe: Soranî û Kirmancî. Bo her dû zarawekeş, dû řênûsî Latîn û Ërebî dabîn kirawe. Wate, eger bełgeyek Soranî bê, be her dû řênûseke detwanin binûsin, bo Kirmancîş her bew şêweye. Bo be kar hênanî Kurdî, bełgeketan debê bem şêweye bê:
+\texttt{Polyglossia}\footnote{\url{https://github.com/reutenauer/polyglossia}}  pekeycêk e ke bo be kar hênanî zimane corawcorekan le \XeLaTeX~saz kirawe. Zimanî Kurdî çendîn zarawe û řênûsî heye. Lem doxeda, dû zaraweman lew pekeyce bo Kurdî zyad kirdûwe: Soranî û Kirmancî. Bo her dû zarawekeş, dû řênûsî Latîn û Ërebî dabîn kirawe. Wate, eger bełgeyek Soranî bê, be her dû řênûseke detwanin binûsin, bo Kirmancîş her bew şêweye. Bo be kar hênanî Kurdî, bełgeketan debê bem şêweye bê:
 
 \begin{lstlisting}
  \documentclass{article}
  \usepackage{polyglossia}
 
- \setdefaultlanguage[variant=sorani,script=Arabic,numerals=eastern]{kurdish}
+ \setdefaultlanguage[variant=sorani,script=arabic,numerals=eastern]{kurdish}
  \newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
  \let\arabicfonttt\ttfamily
 
@@ -160,7 +161,7 @@ Kêşeyek ke pêştir le be kar hênanî \TeX~ da hebû, be kar hênanî zimanan
  \end{documentu}
 \end{lstlisting}
 
-Debê bełgeketan bew hełbijardane pêk bênin ke le hêłî 4da dyarî kirawe ke lêyda zarawe, řênûs û şêwey jimarekan dyarî deken. Xiştey ~\ref{tab_polyglot_options} sercem hełbijardekan nîşan deda ke le dwayîn weşanî Kurdî le ser \texttt{Polyglossia}da heye.
+Debê bełgeketan bew hełbijardane pêk bênin ke le hêłî 4da dyarî kirawe ke lêyda zarawe, řênûs û şêwey jimarekan dyarî deken. Xiştey \ref{tab_polyglot_options} sercem hełbijardekan nîşan deda ke le dwayîn weşanî Kurdî le ser \texttt{Polyglossia}da heye.
 
 \begin{table}[h]
 \centering
@@ -190,32 +191,32 @@ Le weşanî êstada, tenya řojjimêrî zayînî detwanê be kar bihêndirê. N�
 \centering
 \begin{tabular}{|l|l|l|l|l|} 
 \hline
-Îngilîsî & Sorani-Ërebî & Sorani-Latin & Kurmancî-Ërebî & Kurmancî-Latin \\\hline\hline
-January & {\kurdishfont{ دووهەم كانوونی}} & Kanûnî Dûhem  & {\kurdishfont{پاشین  چلەیا}} & Çileya Paşîn \\ 
-February & {\kurdishfont{شوبات}} & Şubat & {\kurdishfont{شبات }} & Sibat \\
-March & {\kurdishfont{ ئازار }} & Azar & {\kurdishfont{ ئادار }} & Adar \\
-April & {\kurdishfont{نیسان }} & Nîsan & {\kurdishfont{ نیسان }} & Nîsan \\
-May & {\kurdishfont{ئایار }} & Ayar & {\kurdishfont{ گولان }} & Gulan \\
-June & {\kurdishfont{حوزەیران }} & Huzeyran & {\kurdishfont{ حەزیران }} & Hezîran \\
-July & {\kurdishfont{ تەممووز }} & Temmûz & {\kurdishfont{ تیرمەهـ }} & Tîrmeh \\
-August & {\kurdishfont{ ئاب }} & Ab & {\kurdishfont{ تەباخ }} & Tebax \\
-September & {\kurdishfont{ئەیلوول }} & Eylûl & {\kurdishfont{ ئیلۆن }} & Îlon \\
-October & {\kurdishfont{  یەكەم تشرینی}} & Tişrînî Yekem & {\kurdishfont{  پێشین چریا  }} & Çiriya Pêşîn \\
-November & {\kurdishfont{  دووهەم تشرینی}} & Tişrînî Dûhem & {\kurdishfont{ پاشین چریا }} & Çiriya Paşîn \\
-December & {\kurdishfont{  یەكەم كانوونی}} & Kanûnî Yekem & {\kurdishfont{پێشین چلەیا  }} & Çileya Pêşîn \\ \hline
+Îngilîsî & Soranî-Ërebî & Soranî-Latîn & Kurmancî-Ërebî & Kurmancî-Latîn \\\hline\hline
+January & {\arabicfont{ دووهەم كانوونی}} & Kanûnî Dûhem  & {\arabicfont{پاشین  چلەیا}} & Çileya Paşîn \\ 
+February & {\arabicfont{شوبات}} & Şubat & {\arabicfont{شبات }} & Sibat \\
+March & {\arabicfont{ ئازار }} & Azar & {\arabicfont{ ئادار }} & Adar \\
+April & {\arabicfont{نیسان }} & Nîsan & {\arabicfont{ نیسان }} & Nîsan \\
+May & {\arabicfont{ئایار }} & Ayar & {\arabicfont{ گولان }} & Gulan \\
+June & {\arabicfont{حوزەیران }} & Huzeyran & {\arabicfont{ حەزیران }} & Hezîran \\
+July & {\arabicfont{ تەممووز }} & Temmûz & {\arabicfont{ تیرمەهـ }} & Tîrmeh \\
+August & {\arabicfont{ ئاب }} & Ab & {\arabicfont{ تەباخ }} & Tebax \\
+September & {\arabicfont{ئەیلوول }} & Eylûl & {\arabicfont{ ئیلۆن }} & Îlon \\
+October & {\arabicfont{  یەكەم تشرینی}} & Tişrînî Yekem & {\arabicfont{  پێشین چریا  }} & Çiriya Pêşîn \\
+November & {\arabicfont{  دووهەم تشرینی}} & Tişrînî Dûhem & {\arabicfont{ پاشین چریا }} & Çiriya Paşîn \\
+December & {\arabicfont{  یەكەم كانوونی}} & Kanûnî Yekem & {\arabicfont{پێشین چلەیا  }} & Çileya Pêşîn \\ \hline
 \end{tabular}
-\caption{Name of the months in the Kurdish calendars in \texttt{Polyglossia}}
+\caption{Nêwî mangekan le rojjimêrî Kurdîy \texttt{Polyglossia}}
 \label{tab_polyglot_calendar}
 \end{table}
 
 
 Bo zanyarî zyatir sebaret be \texttt{Polyglossia} û zimanî Kurdî lem pekeyceda, çaw le  \cite{Charette2020} û \cite{ahmadi2020TexforKurdish} biken.
 
-\newpage
+
 
 \section{Çend nimûne be \texttt{Polyglossia} bo Kurdî}
 
-\subsection{\XeLaTeX~ bo wêje û huner}
+\subsection{\XeLaTeX~bo wêje û huner}
 
 \poemtitle*{Yadigarî şîrîn}
 \settowidth{\versewidth}{Çawekem! Çawî řeşî to afetî gyanî min e}
@@ -229,7 +230,7 @@ bes nebê ew koyletî û ew kiç le jûr dabestine \\
 \vin derkî daxistûwe le to babit keçî derkî nîye \\
 \vin derke daxistin le to derkî humêd daxistine \\
 \end{verse}
-\attrib{Le dîwanî Mamosta Hêmin}
+\attrib{-- Le dîwanî Mamosta Hêmin}
 
 \subsection{\XeLaTeX~bo zanist û bîrkarî}
 
@@ -292,7 +293,7 @@ bes nebê ew koyletî û ew kiç le jûr dabestine \\
 
 \section{Kotayî}
 
-Lem nûsraweyeda be kurtî basî \TeX~ man kird û çonayetî be kar hênanî \XeLaTeX~ legeł pekeycî \texttt{Polyglossia} bo nûsînî Kurdîman xiste řû. Bo zanyarî zyatir sebaret be piřôjey \XeLaTeX~î Kurdî, serdanî małpeřî \url{http://kurdishtex.github.io} biken.
+Lem nûsraweyeda be kurtî basî \TeX~man kird û çonayetî be kar hênanî \XeLaTeX~legeł pekeycî \texttt{Polyglossia} bo nûsînî Kurdîman xiste řû. Bo zanyarî zyatir sebaret be piřôjey \XeLaTeX~î Kurdî, serdanî małpeřî \url{http://kurdishtex.github.io} biken.
 
 
 
