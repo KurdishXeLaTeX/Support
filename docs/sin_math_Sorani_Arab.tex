@@ -1,0 +1,250 @@
+\documentclass[a4paper,12pt]{article}   
+\usepackage{polyglossia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usetikzlibrary{positioning, calc}
+\usetikzlibrary{angles,quotes}
+\setdefaultlanguage[variant=sorani,script=Arabic,numerals=eastern]{kurdish}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
+\let\arabicfonttt\ttfamily
+\author{هەتوان خالد}
+\title{\textbf{یاسای ساینەکان}}
+\date{١٧ی حوزەیرانی ٢١$\cdot$٢}
+\begin{document}
+\tableofcontents
+\maketitle
+\begin{center}
+\begin{flushright}
+\section{پێشەکی}
+\end{flushright}
+یاسای ساینەکان، لە ئەندازە بە کەڵکە بۆ شیکاری پرسیارەکانی وەک: دۆزینەوەی لاکانی سێگۆشە یان گۆشەکانی سێگۆشە.
+\end{center}
+\textbf{پێناسە:} لە سێگۆشە زانییدا، \textbf{یاسای ساینەکان} بریتییە لە هاوکێشەیەک، کە پەیوەندی درێژی لایەکانی سێگۆشەیەک بە گۆشەکانی سێگۆشەکە دەبەستێتەوە.\\
+
+\textbf{{\large دوو شێوازی هەیە}}.\\
+
+\textbf{یەکەم:} بۆ دۆزینەوەی درێژی لایەکی نەزانراوی سێگۆشەکە.\\
+
+\textbf{دووەم:} بۆ دۆزینەوەی گۆشەی لایەکی نەزانراوی سێگۆشەکە.\\
+
+
+\textbf{هاوکێشەی یەکەم}:$$\frac{a}{\sin \alpha}=\frac{b}{\sin \beta}=\frac{c}{\sin \gamma}$$\\
+
+
+\textbf{هاوکێشەی دووەم}:$$\frac{\sin \alpha}{a}=\frac{\sin \beta}{b}=\frac{\sin \gamma}{c}$$
+ هەریەک لە $a$، $b$ وە $c$ بریتیین لە درێژی لای سێگۆشەکە. وە $\alpha$، $\beta$ لەگەڵ $\gamma$ بریتیین لە گۆشەکانی
+ سێگۆشەکە.\\
+ 
+ 
+ بەڵام هاوکێشەی یەکەم قسە دەکات! دەڵێ: "ئەگەر لای $a$ دابەشی گۆشەی بەرامبەری خۆی $(\sin \alpha)$ بکرێت، ئەوا بۆ هەموو لایەکانی تریش ڕاستەو بەمەش نرخی درێژی هەر لایەک  دەدۆزرێتەوەو یەکسان دەبێت بە ئەوی تر وەکو زنجیرە بە دووایەک! $b$ بۆ $\sin \beta$، $c$ بۆ $\sin \gamma$، هتد...".\\
+هاوکێشەی دووەمیش قسە دەکات! دەڵێ: "ئەگەر هاوکێشەی یەکەم هەڵبگەڕێنینەوە، ئەوا گۆشەی نەزانراوی لایەک دەدۆزرێتەوەو یەکسانە بە گۆشەکانی لایەکانی تر، یەک بە دووایەک".
+\section{هاوکێشەکان}
+لێرە دەست دەکەین بە شیکردنەوەی هاوکێشەکان بە پێی پێویست.
+\subsection{هاوکێشەی یەکەم}
+\begin{center}
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=gray},
+draw=gray,
+angle radius=1.0cm,
+}]
+\coordinate [label=left:] (C) at (-10,0);
+\coordinate [label=right:] (A) at (1,0);
+\coordinate [label=above:] (B) at (-4.5,5);
+\draw (C) -- node[above] {$\hspace{-0.3cm}\color{teal} a$} (B) -- node[right] {$\hspace{0.3cm} \color{red} c$} (A) -- node[below] {$\color{blue} b$} (C);
+\pic [my angle, "$\alpha$"] {angle=B--A--C};
+\pic [my angle, "$\beta$"] {angle=C--B--A};
+\pic [my angle, "$\gamma$"] {angle=A--C--B};
+\end{tikzpicture}
+\end{center}
+تێبینی وەڵامی شلۆڤەکردنەکە بکە، هەموویان یەکسانن.\\
+
+
+\textbf{شلۆڤەکردن:}
+
+
+
+
+
+
+
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=black},
+draw=black,
+angle radius=2cm,
+}]
+\coordinate [label=left:] (C) at (-4,-1);
+\coordinate [label=right:] (A) at (9,0);
+\coordinate [label=above:] (B) at (-2,4);
+\draw (C) -- node[above] {$\hspace{-0.3cm} 5$} (B) -- node[right] {$\hspace{0.3cm} 8$} (A) -- node[below] {$9$} (C);
+\pic [my angle, "$\hspace{-0.3cm}\color{gray} 33.5\degree$"] {angle=B--A--C};
+\pic [my angle, "$\color{gray} 84.3\degree$"] {angle=C--B--A};
+\pic [my angle, "$\color{gray} 62.2\degree$"] {angle=A--C--B};
+\end{tikzpicture}
+$$\frac{a}{\sin \alpha}=\frac{5}{\sin (33.5\degree)}=\frac{5}{0.552\ldots}=9.06\ldots$$
+$$\frac{b}{\sin \beta}=\frac{9}{\sin (84.3\degree)}=\frac{9}{0.995\ldots}=9.04\ldots$$$$\frac{c}{\sin \gamma}=\frac{8}{\sin (62.2\degree)}=\frac{8}{0.885\ldots}=9.04\ldots$$
+\newpage
+\subsection{سەلماندن}
+\begin{center}
+لێرە سەلماندن پەیڕەو دەکەین، تا هاوکێشەی یەکەمی بنەڕەتی دەربکەین.\\
+\end{center}
+ سەیری ئەم وێنەیە بکەو بیسەلمێنە کە $\frac{a}{\sin \alpha}=\frac{b}{\sin \beta}=\frac{c}{\sin \gamma}$ لە کاتێک، سێگۆشەیەکی ئاسایی پارچەکراوە بۆ دووبەش بە بەرزییەک، کە ناوی $h$ وە هەریەک لە $a$ و $b$ و $c$ دەبنە درێژی لایەکانی سێگۆشە پارچەکراوەکە و هەر یەک لە $\alpha$ و $\beta$ و $\gamma$ دەبنە گۆشەکانی سێگۆشەی پارچەکراو. بە زانینی ئەوەی نەخشەی \textbf{ساین} بریتییە لە "بەرامبەر لەسەر ژێ". هەرئێستا ئەمە لەسەر هەردوو بەشی سێگۆشەکە جێبەجێ بکە.\\
+ 
+ 
+ 
+\textbf{کاتێک}: $h$ دەبێتە \textbf{بەرامبەر} بۆ هەردوولا وە هەریەک لە $a$ و $b$ دەبنە \textbf{ژێ}.\\
+
+
+\begin{flushleft}
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=gray},
+draw=gray,
+angle radius=1.5cm,
+}]
+\coordinate [label=left:] (C) at (-10,0);
+\coordinate [label=right:] (A) at (6,0);
+\coordinate [label=above:] (B) at (-4,6);
+\draw (C) -- node[above] {$\hspace{-0.3cm} b$} (B) -- node[right] {$\hspace{0.3cm}  a$} (A) -- node[below] {$c$} (C);
+\pic [my angle, "$\beta$"] {angle=B--A--C};
+\pic [my angle, "$\alpha$"] {angle=A--C--B};
+\pic [my angle, "$\hspace{0.3cm} \gamma$"] {angle=C--B--A};
+\draw[dashed] (B) -- (A-|B) ;
+\draw (A)-- node[midway, above] {\hspace{-11.0cm} $\color{gray} h$} (B);
+\end{tikzpicture}\\
+\end{flushleft}
+
+
+
+
+بەمەش: $$\Rightarrow \sin \alpha=\frac{h}{b} \Rightarrow b \sin \alpha=h$$  
+$$\Rightarrow \sin \beta=\frac{h}{a} \Rightarrow a \sin \beta=h$$
+
+
+کەواتە: $$\Rightarrow a \sin \beta=b \sin \alpha$$
+
+
+دووای ڕێکخستن: $$ \hspace{0.5cm}\therefore \frac{a}{\sin \alpha}=\frac{b}{\sin \beta}$$
+
+
+\textbf{تێبینی:} دەتووانین هەمان ڕێگا بەکاربهێنین بۆ دۆزینەوەو سەلماندنی $\frac{c}{\sin \gamma}$. بەڵام لێرە زۆر درێژەی
+
+
+ پێ نادەین لەسەر بابەتەکە. پێم خۆشە خوێنەر خۆی سەلماندنی بۆ بکات...
+
+\newpage
+\subsection{هاوکێشەی دووەم}
+\begin{center}
+لێرە دەست دەکەین بە ڕوونکردنەوی هاوکێشەی دووەم، ئەمیش هەروەک باسمان کرد، بۆ دۆزینەوەی گۆشەی لایەکی نەزانراوە.
+\end{center}
+\begin{center}
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=teal},
+draw=teal,
+angle radius=1.0cm,
+}]
+\coordinate [label=left:] (C) at (-10,0);
+\coordinate [label=right:] (A) at (1,0);
+\coordinate [label=above:] (B) at (-4.5,5);
+\draw (C) -- node[above] {$\hspace{-0.3cm} a$} (B) -- node[right] {$\hspace{0.3cm}  c$} (A) -- node[below] {$b$} (C);
+\pic [my angle, "$\alpha$"] {angle=B--A--C};
+\pic [my angle, "$\beta$"] {angle=C--B--A};
+\pic [my angle, "$\gamma$"] {angle=A--C--B};
+\end{tikzpicture}
+\end{center}
+$$\frac{\sin \alpha}{a}=\frac{\sin \beta}{b}=\frac{\sin \gamma}{c}$$
+هاوکێشەی دووەم هەروەک پێشتر باسمان کرد، بۆ دۆزینەوەی گۆشەی لایەکی نەزانراوە، بە بەکارهێنانی هەڵگەڕانەوەی هاوکێشەکان. لێرە زۆر درێژەی پێ نادەین تەنها بەوە نەبێ، کە سەلماندنێک لە لاپەڕەی دادێ بەسە بۆ ئەوەی تێگەیشتن لەسەر هاوکێشەی دووەم هەبێت. 
+\newpage
+\subsection{سەلماندن}
+\begin{center}
+لێرە سەلماندن پەیڕەو دەکەین،  تا هاوکێشەی دووەمی بنەڕەتی دەربکەین.
+\end{center}
+بیسەلمێنە کە $\frac{\sin \alpha}{a}=\frac{\sin \beta}{b}=\frac{\sin \gamma}{c}$ وە لێ بگەڕێ با سێگۆشەیەکی ئاسایی، هەروەک لە خوارەوە دا دیارە، بکرێت بە دوو پاڕچەوە، وە هەریەک لە $a$ و $b$ و $c$ دەبنە درێژی لایەکان و هەریەک لە $\alpha$ و $\beta$ و $\gamma$ دەبنە گۆشەکانی سێگۆشەی پارچەکراوە. وە وادابنێ $h$ دەبێتە بەرزی سێگۆشەکە.ە زانینی ئەوەی نەخشەی \textbf{ساین} بریتییە لە "بەرامبەر لەسەر ژێ". هەرئێستا ئەمە لەسەر هەردوو بەشی سێگۆشەکە جێبەجێ بکە.\\
+
+
+\textbf{کاتێک}: $h$ دەبێتە \textbf{بەرامبەر} بۆ هەردوولا وە هەریەک لە $a$ و $b$ دەبنە \textbf{ژێ}.\\
+\begin{center}
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=gray},
+draw=gray,
+angle radius=1.5cm,
+}]
+\coordinate [label=left:] (C) at (-6,0);
+\coordinate [label=right:] (A) at (4,0);
+\coordinate [label=above:] (B) at (-3.5,4);
+\draw (C) -- node[above] {$\hspace{-0.3cm} b$} (B) -- node[right] {$\hspace{0.3cm}  a$} (A) -- node[below] {$c$} (C);
+\pic [my angle, "$\beta$"] {angle=B--A--C};
+\pic [my angle, "$\alpha$"] {angle=A--C--B};
+\pic [my angle, "$\gamma$"] {angle=C--B--A};
+\draw[dashed] (B) -- (A-|B) ;
+\draw (A)-- node[midway, above] {\hspace{-8.0cm} $\color{gray} h$} (B);
+\end{tikzpicture}\\
+\end{center}
+بەمەش:$$\Rightarrow \sin \frac{h}{b}=b \sin \alpha=h$$
+$$\Rightarrow \sin \beta=\frac{h}{a}=a \sin \beta=h$$
+لەبەرئەمە:$$\Rightarrow b \sin \alpha=a \sin \beta$$
+کەواتە: $$\therefore \frac{\sin \alpha}{a}=\frac{\sin \beta}{b}$$
+\textbf{تێبینی:} دەتووانین هەمان ڕێگا بەکاربهێنین بۆ دۆزینەوەو سەلماندنی  $\frac{\sin \gamma}{c}$. بەڵام لێرە دووبارە پێم خۆشە تۆی خوێنەر خۆت سەلماندنی بۆ بکەیت... 
+\newpage
+
+
+
+
+\section{شیکارکردن}
+لێرە دەست دەکەین بە شیکاری نموونە، تا تێگەیشتن لێمان نزیک بێت و نەزانی لێمان دوور بێت.
+\subsection{شیکاری نموونەیەک لەسەر هاوکێشەی یەکەم}
+\textbf{نموونەکە}: وێنەی خوارەوە بەکاربهێنە بۆ دۆزینەوی درێژی $x$، نرخی $x$ چەندە؟ کارەکانت  ڕوونبکەوە.
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=gray},
+draw=gray,
+angle radius=2cm,
+}]
+\coordinate [label=left:] (C) at (-8,-2);
+\coordinate [label=right:] (A) at (2,-1);
+\coordinate [label=above:] (B) at (-12,5);
+\draw (C) -- node[above] {} (B) -- node[right] {$\hspace{0.3cm} x$} (A) -- node[below] {$7$} (C);
+{angle=B--A--C};
+\pic [my angle, "$35\degree$"] {angle=C--B--A};
+\pic [my angle, "$105\degree$"] {angle=A--C--B};
+\end{tikzpicture}\\
+
+
+\textbf{شیکار}: $$\Rightarrow \frac{b}{\sin \beta}=\frac{7}{\sin 35\degree}=\frac{c}{\sin \gamma}=\frac{x}{\sin 105\degree}$$
+$$\Rightarrow \frac{x}{\sin 105\degree}=\frac{7}{\sin 35\degree}$$
+$$\Rightarrow x \sin 35\degree=7 \sin 105\degree$$
+$$\therefore x=11.8$$
+\newpage
+\subsection{شیکاری نموونەیەک لەسەر هاوکێشەی دووەم}
+نموونەکە: وێنەی خوارەوە بەکاربهێنە بۆ دۆزینەوی گۆشەی $\gamma$، نرخی $\gamma$ چەندە؟ کارەکانت  ڕوونبکەوە.
+
+\begin{center}
+\begin{tikzpicture}[
+my angle/.style={
+every pic quotes/.append style={text=gray},
+draw=gray,
+angle radius=1.0cm,
+}]
+\coordinate [label=left:] (C) at (-4,0);
+\coordinate [label=right:] (A) at (2,0);
+\coordinate [label=above:] (B) at (0,6);
+\draw (C) -- node[above] {$\hspace{-1.0cm} 5.5$} (B) -- node[right] {$\hspace{0.3cm} 4.7$} (A) -- node[below] {} (C);
+\pic [my angle, "$\hspace{-0.1cm}63\degree$"] {angle=B--A--C};
+\pic [my angle, "$\beta$"] {angle=C--B--A};
+\pic [my angle, "$\gamma$"] {angle=A--C--B};
+\end{tikzpicture}
+\end{center}
+\textbf{شیکار:} $$\Rightarrow \frac{\sin \alpha}{a}=\frac{\sin 63\degree}{5.5}=\frac{\sin \gamma}{c}=\frac{\sin \gamma}{4.7}$$
+$$\Rightarrow \frac{\sin \gamma}{4.7}=\frac{\sin 63\degree}{5.5}$$
+$$\Rightarrow 5.5 \sin \gamma=4.7 \sin 63\degree$$
+$$\Rightarrow \sin \gamma=0.7614\ldots$$
+$$\Rightarrow \gamma=\arcsin \hspace{0.1cm} (0.7614\ldots)$$
+$$\Rightarrow \gamma=49.6\degree$$
+\end{document}
