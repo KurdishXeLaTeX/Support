@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}   
+\usepackage{polyglossia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,backgrounds}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\setdefaultlanguage[variant=sorani,script=Arabic,numerals=easttern]{kurdish}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
+\begin{document}
+\begin{center}
+\begin{tikzpicture}
+\def\colorlist{{"red", "orange", "green", "yellow", "gray", "black", "blue", "violet"}}
+\foreach \y/\A [count=\xi starting from 0, evaluate=\y as \nexty using (\y+1.5, evaluate=\xi as \grad using int(\xi*15)] in {0/پێنجەم, 1.5/چوارەم,2.5/ سێیەم,3.5/دووەم,4.5/یەکەم} {
+\pgfmathsetmacro\myfill{\colorlist[\xi]}
+\begin{scope}[on background layer]
+\clip[preaction={draw}] (-5,0) -- (5,0) -- (0,7) -- cycle;
+\fill[green!\grad!yellow] (-5,\y) rectangle (5,\nexty);
+\fill[green!\grad!yellow] (-5,4.5) rectangle (5,7);
+\end{scope}
+\node at (0,\y+.3) {\A};
+}
+\end{tikzpicture}
+\begin{tikzpicture}[xshift=5cm]
+\foreach \y/\A [count=\xi starting from 0, evaluate=\y as \nexty using (\y+1.5, evaluate=\xi as \grad using int(\xi*15)] in {0/یەکەم, 1.5/دووەم,2.5/ سێیەم,3.5/چوارەم,4.5/پێنجەم} {
+\begin{scope}[on background layer]
+\clip[preaction={draw}] (-5,0) -- (5,0) -- (0,7) -- cycle;
+\fill[blue!\grad!cyan] (-5,\y) rectangle (5,\nexty);
+\fill[blue!\grad!cyan] (-5,4.5) rectangle (5,7);
+\end{scope}
+\node at (0,\y+.3) {\A};
+}
+\end{tikzpicture}
+\end{center}
+\end{document}

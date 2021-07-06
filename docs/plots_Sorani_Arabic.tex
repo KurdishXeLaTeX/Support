@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{article}   
+\usepackage{polyglossia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\setdefaultlanguage[variant=sorani,script=Arabic,numerals=easttern]{kurdish}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
+\let\arabicfonttt\ttfamily 
+\begin{document}
+\begin{center}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ybar,
+ymin=0,
+width=12cm,
+height=5cm,
+bar width=20pt,
+ylabel={زمانزانان ژمارەی},
+nodes near coords,
+symbolic x coords={سەرەتایی قوتابخانە, ناوەندی قوتابخانە, ئامادەیی قوتابخانە, زانکۆکان},
+xtick = data,
+enlarge y limits={value=0.2,upper},
+legend pos=north west
+]
+\addplot[fill=green] coordinates {(سەرەتایی قوتابخانە, 1) (ناوەندی قوتابخانە, 3) (ئامادەیی قوتابخانە, 5) (زانکۆکان, 8)};
+\addplot[fill=yellow] coordinates {(سەرەتایی قوتابخانە, 3) (ناوەندی قوتابخانە, 4) (ئامادەیی قوتابخانە, 4) (زانکۆکان, 4)};
+\legend{ڕەسەن قسەکەری, ناڕەسەن قسەکەری}
+\end{axis}
+\end{tikzpicture}
+\caption{ژمارەی خوێندکارانی زمانزان لە شوێنە پەروەردەییە جیاوازەکان}
+\end{figure}
+\begin{tikzpicture}
+\begin{axis}
+[  
+ybar,  
+enlargelimits=0.15,  
+ylabel={\ نمرە تێکڕای},   
+xlabel={\ خوێندکار ناوی},  
+symbolic x coords={ئاوێزە, سینا, هەتوان, شیلان, هەمووان}, 
+xtick=data,  
+nodes near coords,  
+nodes near coords align={vertical},  
+]  
+\addplot[ybar,fill=cyan] coordinates {(ئاوێزە,50) (سینا,90) (هەتوان,70) (شیلان,80) (هەمووان,60) };
+\end{axis}  
+\end{tikzpicture}
+\end{center}
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}   
+\usepackage{polyglossia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{forest} 
+\usepackage{xcolor}
+\setdefaultlanguage[variant=sorani,script=Arabic,numerals=easttern]{kurdish}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
+\forestset{
+L1/.style={fill=red,},
+L2/.style={fill=cyan,edge={red,line width=4pt}},
+L3/.style={fill=green,edge={cyan,line width=4pt}},
+L4/.style={fill=gray,edge={black,line width=4pt}},
+}
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[sibling distance=10em,
+every node/.style = {shape=rectangle, rounded corners,
+draw, align=center,
+top color=green, bottom color=white!100}]]
+\node {جەبرییەکان هاوکێشە}
+child { node {دەستوور ڕێگای} }
+child { node {شیتەڵ ڕێگای}
+child { node {شیتەڵ جۆرەکانی}
+child { node {دووجا دوو نێوان جیاوازی} }
+child { node {تاقیکردنەوە ڕێگای} }
+child { node {هاوبەش} } }
+child { node {هزری ڕێگای} } };
+\end{tikzpicture}
+\begin{forest}
+for tree={
+grow=0,reversed, 
+parent anchor=east,child anchor=west,
+edge={line cap=round},outer sep=+1pt, 
+rounded corners,minimum width=15mm,minimum height=8mm,  
+l sep=10mm
+}
+[دەستپێک,L1
+[دووم لقی,L2
+[سێیەم لقی,L3
+[چوارەم لقی,L4][پێنجەم لقی,L4]
+]
+[شەشەم لقی,L3
+[حەوتەم لقی,L4][هەشتەم لقی,L4]
+]
+[نۆیەم لقی,L3
+[دەیەم لقی,L4][یازدەهەم لقی,L4]
+] 
+]
+[یەکەم لقی,L2]
+]
+\end{forest}
+\end{center}
+\end{document}

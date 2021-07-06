@@ -1,0 +1,30 @@
+\documentclass[a4paper,12pt]{article}   
+\usepackage{polyglossia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
+\usepackage{xcolor}
+\setdefaultlanguage[variant=sorani,script=Arabic,numerals=easttern]{kurdish}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Yas}
+\begin{document}
+\begin{center}
+\begin{tikzpicture}
+\pie  
+ {46/هەوڵدان,
+     32/پرسیارکردن, 22/بیرکردنەوە}
+\end{tikzpicture}  
+\begin{tikzpicture}   
+\pie[rotate=270, text=pin, color={gray!30, red!100, green!70}]  
+{50/ئۆتۆمبێل بە کردن پیادە,  
+32/پاسکیل بە کردن پیادە, 22/پێ بە کردن پیادە}  
+\end{tikzpicture} 
+\begin{tikzpicture}   
+\pie[cloud, rotate=270, text=inside, color={blue!70, brown!30, black!50}]  
+ {46/دەرچوون,
+     32/کەوتن, 22/دەرنەچوون}
+\end{tikzpicture} 
+\end{center}
+\end{document}
